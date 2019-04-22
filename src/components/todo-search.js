@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/todo-search.css';
 
 const SearchPanel = () => {
   const searchText = 'Type here to search';

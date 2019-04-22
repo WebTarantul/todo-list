@@ -1,0 +1,9 @@
+.todo__search {
+  width: auto;
+  flex-grow: 1;
+  margin-right: 3px;
+  min-height: 40px;
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 1px solid grey;
+}
