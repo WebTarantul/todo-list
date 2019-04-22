@@ -1,8 +1,11 @@
 import React from 'react';
 
-const ListItem = () => {
+const ListItem = ({label, important=false}) => {
+  const itemStyle = {
+    color: important ? 'tomato' : 'black'
+  }
   return (
-    <span className="todo__text">Drink coffee</span>
+    <span className="todo__text" style={itemStyle}>{label}</span>
     )
   }
 export default ListItem;

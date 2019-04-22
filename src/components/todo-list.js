@@ -5,8 +5,8 @@ const TodoList = () => {
   return (
     <React.Fragment>
       <ul className="todo__list">
-        <li className="todo__item"><TodoListItem/></li>
-        <li className="todo__item"><TodoListItem/></li>
+        <li className="todo__item"><TodoListItem label='Drink coffee'/></li>
+        <li className="todo__item" ><TodoListItem label='Build React APP' important/></li>
       </ul>
     </React.Fragment>
   )
