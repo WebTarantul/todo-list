@@ -1,5 +1,6 @@
 .todo-item {
   font-size: 1.25rem;
+  max-width: 400px;
 }
 
 .todo-item button {
@@ -7,18 +8,18 @@
   margin: 3px;
 }
 
-.todo-item-text {
+.todo-item__text {
   margin-left: 1.25rem;
   line-height: 35px;
   cursor: pointer;
   user-select: none;
 }
 
-.todo-item.done .todo-item-text {
+.todo-item.done .todo-item__text {
   text-decoration: line-through;
 }
 
-.todo-item.important .todo-item-text {
+.todo-item.important .todo-item__text {
   font-weight: bold;
   color: steelblue;
 }
