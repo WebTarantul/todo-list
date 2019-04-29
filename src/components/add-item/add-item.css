@@ -1,3 +1,7 @@
 .add-item{
   margin-top: 15px;
 }
+.add-item__btn {
+  min-width: 150px;
+  margin-left: 5px;
+}
