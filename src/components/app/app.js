@@ -16,7 +16,8 @@ export default class App extends Component {
         this.createItem('Build React APP'),
         this.createItem('Drink water'),
         this.createItem('Make awesome APP')
-    ]
+    ],
+    term: ''
   }
 
   createItem(label) {
@@ -28,7 +29,6 @@ export default class App extends Component {
     }
   }
   deleteItem = (id) => {
-    console.log(this.maxId);
     this.setState(({ todoData }) => {
       const idx = todoData.findIndex((el) => el.id === id);
       let newData = [...todoData.slice(0,idx),...todoData.slice(idx + 1)];
@@ -73,9 +73,21 @@ export default class App extends Component {
     return [...arr.slice(0,idx), newItem, ...arr.slice(idx + 1)];
   }
 
+  search(items,searchText) {
+    if (searchText.length === 0 ) {
+      return items;
+    }
+    return items.filter((el) => {
+      return el.label.toLowerCase().indexOf(searchText.toLowerCase()) > -1})
+  }
+
+  onSearchChange = (value) => {
+    this.setState({term: value})
+  }
 
   render() {
-    const {todoData} = this.state;
+    const {todoData,term} = this.state;
+    const visableItems = this.search(todoData,term);
     const doneCount = todoData.filter(el => el.done).length;
     const todoCount = todoData.length - doneCount;
 
@@ -85,10 +97,10 @@ export default class App extends Component {
         <TodoHeader 
           toDo={todoCount} 
           done={doneCount} />
-        <TodoSearch/>
+        <TodoSearch onSearchChange={this.onSearchChange}/>
         <ItemStatusFilter/>
         <TodoList
-          todos = { todoData }
+          todos = { visableItems }
           onDeleted = { this.deleteItem }
           onToggleImportant = { this.onToggleImportant }
           onToggleDone = {this.onToggleDone}
