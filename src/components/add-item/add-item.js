@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
-import './add-item.css'
+import React, {Component} from 'react';
+import './add-item.css';
 
 export default class AddItem extends Component {
   state = {
     label: ''
   }
 
-  onLabelChange = (e) =>{
-    this.setState({
+  onChangeValue = (e) => {
+    this.setState( {
       label: e.target.value
-    })
+    });
   }
-  onSubmit= (e) => {
+
+  onSubmitForm = (e) => {
     e.preventDefault();
-    this.props.onAddItem(this.state.label);
-    this.setState({
-      label: ''
-    })
+    this.props.onAddItem(this.state.label)
+    this.setState({label: ''});
   }
-  render() {
+
+  render(){
     return (
-      <form className="add-item d-flex" onSubmit={this.onSubmit}>
-        <input className='form-control' 
-                type="text" 
-                name="new-item" 
-                id="add-item-input" 
-                onChange={this.onLabelChange}
-                placeholder='What need to be done'
-                value={this.state.label}/>
-        <button className="add-item__btn item__btn btn btn-outline-secondary" >
-          Add Todo item
-        </button>
+      <form className="add-item d-flex"
+            onSubmit={(e) => this.onSubmitForm(e)} >
+      <input className='add-item__input' 
+             type="text" 
+             placeholder='What need to be done'
+             value={this.state.label}
+             onChange={(e) => this.onChangeValue(e)} />
+      <button className="add-item__btn btn btn-info">Add Todo Item</button>
       </form>
     )
   }

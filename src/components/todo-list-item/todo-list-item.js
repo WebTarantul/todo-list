@@ -1,36 +1,24 @@
 import React from 'react';
-import './todo-list-item.css'
+import './todo-list-item.css';
 
-export default class ListItem extends React.Component {
-
-  render() {
-    const {label,onDeleted,onToggleDone,onToggleImportant,done,important} = this.props;
-    let classNames = 'todo-item'
-    if (done) {
-      classNames += ' done'
-    }
-    if (important) {
-      classNames += ' important'
-    }
-    return (
-  
-      <span className={classNames}>
-        <span className="todo-item__text" onClick={onToggleDone}>
-          {label}
-        </span>
-        <button type="button"
-                className="btn btn-outline-success btn-sm float-right"
-                onClick={onToggleImportant}>
-          <i className="fa fa-exclamation" />
-        </button>
-  
-        <button type="button"
-                className="btn btn-outline-danger btn-sm float-right"
-                onClick={onDeleted} >
-          <i className="far fa-trash-alt" />
-        </button>
-      </span>
-      );
+const TodoListItem = ({itemData:{label,done,important},onItemDone,onItemImportant,onItemDelete}) => {
+  let classes = 'todo-list__item list-group-item'
+  if (done) {
+    classes += ' done'
   }
+  if(important) {
+    classes += ' important'
+  }
+  return (
+    <li className={classes} >
+      <span className='todo-list__label'
+            onClick={() => onItemDone()}>
+            {label}
+      </span>
+      <button className="todo-list__important btn btn-warning" onClick={() => onItemImportant()}><i className="fa fa-exclamation" /></button>
+      <button className="todo-list__delete btn btn-danger" onClick={() => onItemDelete()}><i className="far fa-trash-alt" /></button>
+    </li>
+  )
 }
 
+export default TodoListItem;

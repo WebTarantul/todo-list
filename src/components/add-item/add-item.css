@@ -1,7 +1,21 @@
 .add-item{
   margin-top: 15px;
+  display: flex;
+  align-items: center;
 }
-.add-item__btn {
-  min-width: 150px;
-  margin-left: 5px;
+.add-item__input{
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width:426px){
+  .add-item{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .add-item__input{
+    margin-bottom: 5px;
+  }
 }

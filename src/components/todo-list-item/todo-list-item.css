@@ -1,25 +1,35 @@
-.todo-item {
-  font-size: 1.25rem;
-  max-width: 400px;
-}
-
-.todo-item button {
-  width: 35px;
-  margin: 3px;
-}
-
-.todo-item__text {
-  margin-left: 1.25rem;
-  line-height: 35px;
+.todo-list__item {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
   cursor: pointer;
   user-select: none;
 }
 
-.todo-item.done .todo-item__text {
-  text-decoration: line-through;
+.todo-list__label {
+  margin-right: auto;
+  flex-grow: 1;
+  padding: 8px 0;
 }
 
-.todo-item.important .todo-item__text {
-  font-weight: bold;
-  color: steelblue;
+.todo-list__delete {
+  margin-left: 5px;
+}
+
+.todo-list__item .btn {
+  width: 30px;
+  font-size: 14px;
+  padding: 3px;
+  position: relative;
+  z-index: 10;
+}
+
+.todo-list__item.done {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.todo-list__item.important{
+  font-weight: 700;
+  color: rgb(255, 123, 0)
 }

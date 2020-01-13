@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header__title {
+  padding-right: 10px;
+}
+
+.header__stat {
+  text-align: right;
+}
+
+@media only screen and (max-width:426px) {
+  .header__stat {
+    font-size: 14px;
+    display: block;
+  }
+}

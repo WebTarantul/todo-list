@@ -1,0 +1,8 @@
+.search{
+  min-height: 35px;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-color: #999;
+  border-width: 1px;
+}

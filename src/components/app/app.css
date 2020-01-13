@@ -1,0 +1,25 @@
+body {
+  padding: 10px;
+}
+
+.todo__wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.todo__nav-panel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width:426px) {
+  .todo__nav-panel {
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  .search{
+    margin-bottom: 5px;
+  }
+}
